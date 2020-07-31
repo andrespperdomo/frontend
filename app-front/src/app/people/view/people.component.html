@@ -1,0 +1,49 @@
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+<div style="text-align: center">
+         <h1 class="text-center" style="width:100%">People</h1> 
+</div>
+
+
+<div class="container">
+            <form>
+ 
+<div class="container">
+
+    <app-pagination (paginaEmitter)="goToPage($event)" [page]="page" [totalPages]="totalPages" [numShops]="numShops"></app-pagination>
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th *ngFor="let header of headerColumns">{{header}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let people of people.results" >
+            <td (click)="openDialog(people)">{{people.name}}</td>
+            <td (click)="openDialog(people)">{{people.height}}</td>
+            <td (click)="openDialog(people)">{{people.mass}}</td>
+            <td (click)="openDialog(people)">{{people.hair_color}}</td>
+            <td (click)="openDialog(people)">{{people.skin_color}}</td>
+            <td (click)="openDialog(people)">{{people.eye_color}}</td>
+            <td (click)="openDialog(people)">{{people.birth_year}}</td>
+            <td (click)="openDialog(people)">{{people.gender}}</td>
+            <td (click)="openDialog(people)">{{people.created}}</td>
+            <td (click)="openDialog(people)">{{people.edited}}</td>
+            
+          </tr>
+    </tbody>
+    </table>
+    <app-pagination (paginaEmitter)="goToPage($event)" [page]="page" [totalPages]="totalPages" [numShops]="numShops"></app-pagination>
+    </div>  
+    <app-spinner [mostrar]="mostrar"></app-spinner>
+   
+            </form><!-- ends register form -->
+
+</div>
+
+

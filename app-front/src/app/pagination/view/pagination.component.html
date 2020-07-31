@@ -1,0 +1,10 @@
+<div style="float: right !important;">
+<div *ngIf="numShops" class="pagination">
+    <div *ngIf="page > 1" class="pagination__prev"><button (click)="anterior()"><	</button></div>
+    <div class="pagination__text">
+        <p>P&aacute;gina {{page}} de {{totalPages}}&nbsp;</p>
+        <p>{{numShops}} resultados</p>
+    </div>
+    <div *ngIf="page < totalPages" class="pagination__next"><button (click)="siguiente()" >></button></div>
+</div>
+</div>
