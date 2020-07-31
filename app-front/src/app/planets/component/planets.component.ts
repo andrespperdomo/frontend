@@ -21,8 +21,6 @@ import {AppSettings} from '../../app.settings';
   styleUrls: ['../style/planets.component.css']
 })
 export class PlanetsComponent implements OnInit {
-
- mostrar:boolean=true;  
   
  names : string [];
 
@@ -30,8 +28,6 @@ export class PlanetsComponent implements OnInit {
   peoples:any;
 
   message:any;
-  
-   parametro:boolean=true;
   
   headerColumns: Array<string> = ['Name','Rotation period','Orbital period','Diameter','Climate',
                            'Gravity','Terrain','Surface water','Population'];
@@ -53,13 +49,10 @@ export class PlanetsComponent implements OnInit {
   
 
   constructor(private service:SwapiService,private modalService: NgbdModalComponent,private servicio:Servicio,
-              private serviceApiBackend:BackendApiService) {
-  
-   
+              private serviceApiBackend:BackendApiService) {  
    }
 
-  ngOnInit() {
-      
+  ngOnInit() {     
       let resp=this.service.getPlanetsAll();
        resp.subscribe((data)=>{this.planet=data;
        });

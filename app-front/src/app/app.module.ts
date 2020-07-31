@@ -14,6 +14,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { HttpConfigInterceptor } from './interceptor/httpconfig.interceptor';
 
 import { SwapiService } from './services/swapi.service';
+import { LoaderService } from './services/loader.service';
 import { Servicio } from './utilidad/datos.service';
 import { BackendApiService } from './services/apibackend.service';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -45,7 +46,8 @@ import { NgbdModalContent } from './modal/component/modal.component';
     HttpClientModule,
     NgbModule
   ],
-  providers: [SwapiService,Servicio,BackendApiService, NgbActiveModal,AppSettings,{provide:HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor,multi:true}],
+  providers: [SwapiService,Servicio,BackendApiService, NgbActiveModal,AppSettings,LoaderService,
+  {provide:HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor,multi:true}],
    entryComponents: [NgbdModalComponent,NgbdModalContent],
   bootstrap: [AppComponent]
 })

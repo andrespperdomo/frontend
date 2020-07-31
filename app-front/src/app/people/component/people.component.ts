@@ -10,6 +10,7 @@ import {Servicio } from '../../utilidad/datos.service';
 import {BackendApiService } from '../../services/apibackend.service';
 import { Visita } from '../../visitas/model/visita';
 import {AppSettings} from '../../app.settings';
+import { Subject } from 'rxjs';
  
 
 
@@ -32,8 +33,6 @@ export class PeopleComponent implements OnInit {
   
   planets:Planets;
   
-  parametro:boolean=false;
-  
   visita: Visita=new Visita(0,"",0,"");
   
   headerColumns: Array<string> = ['Name','Height','Mass','Hair color','Skin color',
@@ -50,9 +49,6 @@ export class PeopleComponent implements OnInit {
  
   private numResults: number = 10;     
   
-  mostrar:boolean=true;                    
-
-
 
   constructor(private service:SwapiService,private modalService: NgbdModalComponent,
   private servicio:Servicio,private serviceApiBackend:BackendApiService) {
